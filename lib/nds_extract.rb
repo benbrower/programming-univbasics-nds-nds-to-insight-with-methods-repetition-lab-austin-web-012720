@@ -28,7 +28,11 @@ end
 def list_of_directors(source)
   # Write this implementation
   directors = []
-  pp source
+  i = 0
+  while i < source.length do
+    directors << source[i]
+  end
+  directors
 end
 
 def total_gross(source)
