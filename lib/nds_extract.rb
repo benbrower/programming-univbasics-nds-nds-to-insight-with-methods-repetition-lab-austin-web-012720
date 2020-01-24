@@ -3,7 +3,6 @@ require_relative './directors_database'
 require 'pp'
 
 def directors_totals(source)
-  pp source
   result = {}
   director_index = 0
   while director_index < source.size do
@@ -47,5 +46,11 @@ def total_gross(source)
   # Visit each key (i.e. director name), look up the value in the hash
   # returned by directors_totals, and add it to a running total. When done,
   # return the total
-
+  total = 0
+  i = 0
+  while i < source.size do
+    total += gross_for_director(list_of_directors(i))
+    i += 1
+  end
+  total
 end
